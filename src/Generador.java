@@ -1,17 +1,23 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
 public class Generador {
 
-    // Genera un listado de tamaño size
-    // con numeros aleatorios 0 - size
-    public static List<Integer> generate(int size){
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < size; i++){
-            list.add((int ) (Math.random() * size));
+    public static int[] generate(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("El tamaño no puede ser negativo: " + n);
         }
-        return list;
+        if (n > Integer.MAX_VALUE - 1) {
+            throw new IllegalArgumentException("Tamaño excede el límite seguro para evitar desbordamiento.");
+        }
+        if (n == 0) {
+            return new int[0];
+        }
 
+        Random rand = new Random();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand.nextInt(n + 1); // Entre 0 y n inclusive
+        }
+        return arr;
     }
-    
 }

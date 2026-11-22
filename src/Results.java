@@ -1,14 +1,14 @@
 public class Results {
 
     private String functionName;
-    private long duracion;
+    private long duracionNs;
     private String sample;
 
 
-    public Results(String functionName, long duracion, String sample) {
+    public Results(String functionName, long duracionNs, String sample2) {
         this.functionName = functionName;
-        this.duracion = duracion;
-        this.sample = sample;
+        this.duracionNs = duracionNs;
+        this.sample = sample2;
     }
 
 
@@ -22,13 +22,13 @@ public class Results {
     }
 
 
-    public long getDuracion() {
-        return duracion;
+    public long getDuracionNs() {
+        return duracionNs;
     }
 
 
-    public void setDuracion(long duracion) {
-        this.duracion = duracion;
+    public void setDuracionNs(long duracionNs) {
+        this.duracionNs = duracionNs;
     }
 
 
@@ -47,8 +47,8 @@ public class Results {
     @Override
     public String toString() {
 
-        long segundos = duracion/1000000000;
-        return "Results [functionName=" + functionName + ", duracion=" + duracion + "ns, " + segundos + "s" + ", sample=" + sample + "]";
+        long segundos = duracionNs/1000000000;
+        return "Results [functionName=" + functionName + ", duracion=" + duracionNs + "ns, " + segundos + "s" + ", sample=" + sample + "]";
     }
 
     
